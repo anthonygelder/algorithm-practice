@@ -169,6 +169,7 @@ function merge(arr1, arr2){
     let result = []
 
     function sort() {
+        console.log(arr1, arr2)
         // base base, if both array length is reached
         if (arr1.length === 0 && arr2.length === 0) {return}
 
@@ -231,11 +232,43 @@ function latticePaths(m, n) {
 
 
 
+function minimumStepsToOne(num) {
+    let steps = 0
+
+    function step() {
+        // console.log(num)
+        if(num === 1) {return}
+        
+        if(num === 2) {
+            console.log('here1')
+
+            num--
+            steps++
+        } else if(num % 3 === 0) {
+            console.log('here2')
+
+            num = num/3
+            steps++
+        } else if(num % 2 === 0){
+            console.log('here3')
+
+            num = num/2
+            steps++
+        } else {
+            console.log('here4')
+            num--
+            steps++
+        }
+
+        console.log(num)
+        step()
+    }
+
+    step()
+    return steps
+}
+
+// console.log(minimumStepsToOne(11))
 
 
-
-// coin sum
-
-// input: 5 [1,1,2,4]
-// output: number of combonations that equal 5
 
