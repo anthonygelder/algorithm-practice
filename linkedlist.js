@@ -78,3 +78,26 @@ list.delete(1)
 console.log(list.contains(2))
 
 console.log(list)
+
+
+function swapNodes(head, a , b) {
+    let dummy = ListNode(Node)
+    dummy.next = head
+    
+    let node_a = null
+    let node_b = null
+
+    p_a = null
+    p_b = null
+
+    let cur = head
+
+    while(cur !== null) {
+        if(cur.next.value === a) {
+            node_a = 
+        }
+
+
+
+    }
+}
