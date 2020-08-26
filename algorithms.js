@@ -29,7 +29,6 @@ function smallerNumbersThanCurrent(nums) {
             // check if j < i
             if(nums[j] < nums[i]) {
                 // if it is, add to count
-                console.log('hey')
                 count++
             }
             
