@@ -88,4 +88,60 @@ function lastStoneWeight(weights) {
 
 const nums = [9,4,6,2,9,3,6]
 
-console.log(lastStoneWeight(nums))
+// console.log(lastStoneWeight(nums))
+
+// -------------------------------------------------------------------------------------------------------------
+
+// Given an array A of non-negative integers, return an array consisting of all the even elements of A, followed by all the odd elements of A.
+
+// Example 1:
+
+// Input: [3,1,2,4]
+// Output: [2,4,3,1]
+// The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
+
+
+function evenThenOdd(arr) {
+    // store even and odd number in seperate arrays
+    let odd = []
+    let even = []
+
+    // loop over input array 
+    for(let i = 0; i < arr.length; i++) {
+        // check odd or even for each number
+        if(arr[i] % 2 === 0) {
+            // if odd push to odd array
+            even.push(arr[i])
+        } else {
+            // if even push to even array
+            odd.push(arr[i])
+        }
+    }
+    return even.concat(odd)
+}
+
+// console.log(evenThenOdd(nums))
+
+
+
+// -------------------------------------------------------------------------------------------------------------
+
+
+// Given an array of integers A sorted in non-decreasing order, return an array of the squares of each number, also in sorted non-decreasing order.
+
+// Example 1:
+
+// Input:  [-4,-1,0,3,10]
+// Output: [0,1,9,16,100]
+
+
+function sortedSquares(A) {
+    // loop over array
+    for (let i = 0; i < A.length; i++) {
+        // square numbers
+        A[i] = A[i] * A[i]
+    }
+    return A.sort((a, b) => a - b)
+}
+
+sortedSquares([-4,-1,0,3,10])
