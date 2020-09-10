@@ -144,4 +144,47 @@ function sortedSquares(A) {
     return A.sort((a, b) => a - b)
 }
 
-sortedSquares([-4,-1,0,3,10])
+// sortedSquares([-4,-1,0,3,10])
+
+
+// -------------------------------------------------------------------------------------------------------------
+
+
+// Given an array A of non-negative integers, half of the integers in A are odd, and half of the integers are even.
+
+// Sort the array so that whenever A[i] is odd, i is odd; and whenever A[i] is even, i is even.
+
+// You may return any answer array that satisfies this condition.
+
+// Example 1:
+
+// Input: [4,2,5,7]
+// Output: [4,5,2,7]
+// Explanation: [4,7,2,5], [2,5,4,7], [2,7,4,5] would also have been accepted.
+
+function paritySort(A) {
+    // declare new, even and odd arrays
+    const newArr = []
+    const even = []
+    const odd = []
+    // loop over A
+    for(let i = 0; i < A.length; i++) {
+        // check odd or even for each number
+        if(A[i] % 2 === 0) {
+            // if odd push to odd
+            even.push(A[i])
+        } else {
+            // if even push to even
+            odd.push(A[i])
+        }
+    }
+
+    // loop over even or odd
+    for(let i = 0; i < even.length; i++) {
+        // alternativly push into new array
+        newArr.push(even[i],odd[i])
+    }
+    return newArr
+}
+
+console.log(paritySort([4,2,5,7]))
