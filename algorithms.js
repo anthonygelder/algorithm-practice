@@ -206,10 +206,14 @@ function paritySort(A) {
 
 function maxSubArray(nums) {
     // max 
-    let trueMax = 0
+    let trueMax = nums[0]
     // loop
     for(let i = 0; i < nums.length; i++) {
         let max = nums[i]
+        
+        if(max > trueMax) {
+            trueMax = max
+        }
         // inner loop
         for(let j = i+1; j < nums.length; j++) {
             max = max + nums[j]
