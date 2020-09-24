@@ -54,4 +54,40 @@ function countUniqueValues(arr) {
 
 }
 
-console.log(countUniqueValues([1,1,1,2,3,3,4,4,5,6]))
+// console.log(countUniqueValues([1,1,1,2,3,3,4,4,5,6]))
+
+// -------------------------------------------------------------
+
+// Implement a function called areThereDupes which acceptes a variable number of arguments, 
+// and checks whether there are any duplicates among the arguments passed in.
+
+// 1,2,3 => false
+// 1,2,2 => true
+
+function areThereDupes() {
+
+    let obj = {}
+
+
+    // loop over array
+    for(let i = 0; i < arguments.length; i++) {
+        // check if 2 pointers are equal
+        if(arguments[i] in obj) {
+            obj[arguments[i]]++
+        } else {
+            obj[arguments[i]] = 1
+        }
+
+        // iterate second pointers
+    }
+    
+    for(const arg in obj) {
+        console.log(obj[arg])
+        if(obj[arg] > 1) {
+            return true
+        }
+    }
+    return false
+}
+
+console.log(areThereDupes(1,4,3,5,1))
